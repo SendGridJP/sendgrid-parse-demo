@@ -1,0 +1,56 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+	padding: 10em 0 8em;
+	text-align: center;
+  
+	/* the background-color will be set with JavaScript */
+
+	/* make background color changes fade */
+  -webkit-transition: background 2s;
+     -moz-transition: background 2s;
+       -o-transition: background 2s;
+          transition: background 2s;
+}
+
+h1 {
+	font-size: 4em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+a {
+	/* color taken from the Twilio logo */
+	color: #FF0026;
+}
+
+.highlight {
+  background: white;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.text {
+  float: left;
+}
+
+.text-container {
+  display: inline-block;
+  padding: 0 1em 1em;
+  border-radius: 1em;
+}
+
+.text-container:after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px;
+}

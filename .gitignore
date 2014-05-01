@@ -1,0 +1,4 @@
+node_modules
+authtoken.txt
+.settings
+.jshintrc 
