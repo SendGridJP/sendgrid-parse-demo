@@ -2,6 +2,7 @@
 var twilio = require("twilio");
 var express = require("express.io");
 var shared = require("./public/shared");
+var util = require('util');
 
 //var authToken = process.env.AUTH_TOKEN || require("fs").readFileSync("authtoken.txt").toString().trim();
 
@@ -22,6 +23,9 @@ app.post('/hook', function(req, res) {
   // extract the color from the request
   var color = (req.body.Body || req.body.text).split(/\n/)[0].toLowerCase().replace(/\s/g, "");
 
+  // output request object
+  console.log(util.inspect(req, false, null));
+  
   console.log(color);
 
   // prepare the reply to Twilio
@@ -37,6 +41,7 @@ app.post('/hook', function(req, res) {
 });
 
 app.io.route('ready', function(req) {
+  console.log('app.io.route(ready)');
   if (lastColor)
     req.io.emit('color', lastColor);
 });
