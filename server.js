@@ -10,7 +10,7 @@ var util = require('util');
 var app = express();
 app.http().io();
 
-var lastColor;
+var lastInput;
 
 app.use(express.bodyParser());
 
@@ -23,17 +23,23 @@ app.post('/hook', function(req, res) {
   // extract the color from the request
   var color = (req.body.Body || req.body.text).split(/\n/)[0].toLowerCase().replace(/\s/g, "");
 
-  // output request object
-  console.log(util.inspect(req, false, null));
+  // extract the requester mail address
+  var requester = req.body.from;
   
+  // output request object
+  //console.log(util.inspect(req, false, null));
+  
+  var input = { color: color, requester: requester };
   console.log(color);
+  console.log(requester);
 
+  
   // prepare the reply to Twilio
   var resp = new twilio.TwimlResponse();
   
   // broadcast the color to all connected browsers
-  app.io.broadcast('color', color);
-  lastColor = color;
+  app.io.broadcast('input', input);
+  lastInput = input;
 
   // send the reply to Twilio
   // SendGrid will just ignore the reply
@@ -41,9 +47,9 @@ app.post('/hook', function(req, res) {
 });
 
 app.io.route('ready', function(req) {
-  console.log('app.io.route(ready)');
-  if (lastColor)
-    req.io.emit('color', lastColor);
+  if (lastInput) {
+    req.io.emit('input', lastInput);
+  }
 });
 
 app.listen(process.env.PORT || 7076);
