@@ -1,7 +1,7 @@
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
-	padding: 10em 0 8em;
+	padding: 1em 0 8em;
 	text-align: center;
   
 	/* the background-color will be set with JavaScript */
@@ -26,35 +26,64 @@ a {
 	color: #FF0026;
 }
 
+.box {
+	float: left;
+}
+
+.mail {
+	width: 100px;
+	padding: 35px 0px 0px 0px;
+}
+
+.arrow {
+  width: 100px;
+  padding: 0px 10px 20px 10px;
+}
+
 .highlight {
   background: white;
   background: rgba(255, 255, 255, 0.7);
 }
 
 .demo-container {
-  float: top;
   margin: 1em;	
   border-radius: 1em;
   display: inline-block;
-  padding: 0 1em 1em;
+  padding: 1em;
+  width: 800px;
 }
 
-.text {
-  float: left;
+.demo-container-box {
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .text-container {
   display: inline-block;
-  padding: 0 1em 1em;
+  padding: 1em;
   border-radius: 1em;
+  float: bottom;
+  width: 800px;
 }
 
+.text-container div {
+  margin: 0 auto;
+}
 .text-container:after {
   clear: both;
   content: '';
   display: block;
 }
 
+.image {
+  margin: 1em;	
+  width: 640px;
+}
+
+.player {
+  margin: 1em;
+  width: 640px;
+}
 footer {
   position: fixed;
   left: 0;
