@@ -8,7 +8,8 @@ dotenv.load();
 
 // env
 var apiKey = process.env.YOUTUBE_API_KEY.trim();
-console.log(apiKey);
+//console.log(apiKey);
+//console.log(process.env);
 
 // var authToken = process.env.AUTH_TOKEN ||
 // require("fs").readFileSync("authtoken.txt").toString().trim();
@@ -83,7 +84,7 @@ app.post('/hook', function(req, res) {
     };
     // broadcast the color to all connected browsers
     lastInput = input;
-    console.log(input);
+    //console.log(input);
 
     // broadcast to client if no files
     if (req.body.attachments == 0) {
