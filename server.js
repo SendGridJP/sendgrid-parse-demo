@@ -72,6 +72,8 @@ app.post('/hook', function(req, res) {
         }
     }
 
+    // console.log(util.inspect(req, false));
+
     // input for client
     var input = {
         color : color,
