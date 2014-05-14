@@ -49,7 +49,15 @@ socket.on('input', function(input) {
 
     document.body.style.backgroundColor = validColor(color) ? color
             : randomColor();
-    document.getElementById("requester").innerHTML = requester;
+    // add requester to list
+    var newLi = document.createElement("div");
+    newLi.innerHTML = requester;
+    var requesterList = document.getElementById("requester-list");
+    var list = requesterList.getElementsByTagName("div");
+    if (list.length > 2) {
+        requesterList.removeChild(requesterList.childNodes.item(0));
+    }
+    requesterList.appendChild(newLi);
     // if (file != null)
     document.getElementById("image").src = "img/image.jpg";
     searchYoutube(color, apiKey, callbackSearch);

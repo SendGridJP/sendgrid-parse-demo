@@ -24,7 +24,8 @@ function onPlayerReady(evt) {
 
 function onPlayerStateChange(evt) {
     if (evt.data == YT.PlayerState.PLAYING && !done) {
-        setTimeout(stopVideo, 110000);
+//    if (evt.data == !done) {
+        setTimeout(stopVideo, 5000);
         done = true;
     }
 }

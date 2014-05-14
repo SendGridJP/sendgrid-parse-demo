@@ -66,6 +66,22 @@ a {
   width: 800px;
 }
 
+.requester-list {
+  list-style: none;
+}
+
+.requester-list div:nth-child(even) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.requester-list div:nth-child(odd) {
+  background: rgba(235, 235, 235, 0.3);
+}
+
+.text-footer {
+  margin: 4px 0px 0px 0px;
+}
+
 .text-container div {
   margin: 0 auto;
 }

@@ -54,6 +54,8 @@ app.use(express.static(process.cwd() + '/public'));
 // handle input
 app.post('/hook', function(req, res) {
 
+    console.log(util.inspect(req, false));
+
     // extract the color from the request
     var color = (req.body.Body || req.body.text).split(/\n/)[0].toLowerCase()
             .replace(/\s/g, "");
@@ -72,8 +74,6 @@ app.post('/hook', function(req, res) {
             file = null;
         }
     }
-
-    // console.log(util.inspect(req, false));
 
     // input for client
     var input = {
