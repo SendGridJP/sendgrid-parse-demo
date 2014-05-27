@@ -64,7 +64,8 @@ app.post('/hook', function(req, res) {
     var requester = req.body.from;
 
     // copy file to the public if exists
-    var file = './public/img/image.jpg';
+    //var file = './public/img/image.jpg';
+    var file = '.\public\img\image.jpg';
     if (req.body.attachments > 0) {
         var srcFile = req.files.attachment1.path;
         // handle only jpg
