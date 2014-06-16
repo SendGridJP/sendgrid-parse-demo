@@ -1,0 +1,13 @@
+AIzaSyC223bSg2LN_phVHLyYyYV_X36KAD1ytqY
+Got request
+color: gold
+requester: awwa <awwa500@gmail.com>
+Got request
+color: black
+requester: awwa <awwa500@gmail.com>
+Finish copy: dstFile: .publicimgimage.jpg, srcFile: /var/folders/97/8_15dfmn0w98lvdnsg7w9l8w0000gn/T/24051-155yc29.jpg
+AIzaSyC223bSg2LN_phVHLyYyYV_X36KAD1ytqY
+Got request
+color: red
+requester: awwa <awwa500@gmail.com>
+Finish copy: dstFile: ./public/img/image.jpg, srcFile: /var/folders/97/8_15dfmn0w98lvdnsg7w9l8w0000gn/T/24280-1gq3fsy.jpg

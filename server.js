@@ -8,7 +8,7 @@ dotenv.load();
 
 // env
 var apiKey = process.env.YOUTUBE_API_KEY.trim();
-//console.log(apiKey);
+console.log(apiKey);
 //console.log(process.env);
 
 // var authToken = process.env.AUTH_TOKEN ||
@@ -27,6 +27,7 @@ var fileCopy = function(srcFile, dstFile, callback) {
         });
         oldFile.addListener("close", function() {
             newFile.end();
+            console.log("Finish copy: dstFile: " + dstFile + ", srcFile: " + srcFile);
             if (callback) {
                 callback();
             }
@@ -54,14 +55,17 @@ app.use(express.static(process.cwd() + '/public'));
 // handle input
 app.post('/hook', function(req, res) {
 
-    console.log(util.inspect(req, false));
+    //console.log(util.inspect(req, false));
+    console.log('Got request');
 
     // extract the color from the request
     var color = (req.body.Body || req.body.text).split(/\n/)[0].toLowerCase()
             .replace(/\s/g, "");
+    console.log('color: ' + color);
 
     // extract the requester mail address
     var requester = req.body.from;
+    console.log('requester: ' + requester);
 
     // copy file to the public if exists
     var file = './public/img/image.jpg';
